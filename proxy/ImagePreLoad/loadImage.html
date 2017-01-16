@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <script src="./proxyImage.js"></script>
+    <script>
+        var myImage = (function () {
+            var imgNode = document.createElement('img');
+            document.body.appendChild(imgNode);
+
+            return {
+                setSrc: function (src) {
+                    imgNode.src = src;
+                }
+            };
+        })();
+
+        var proxyImage = proxy(myImage);
+
+        //proxyImage.setSrc('http://handluggageonly.co.uk/wp-content/uploads/2016/10/Hand-Luggage-Only-Blog-Header-Logo-Transparent-in-Black-Second.png');
+        proxyImage.setSrc('https://s-media-cache-ak0.pinimg.com/564x/97/c1/e7/97c1e718439b5a20d9b511491526abe1.jpg');
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <button id="loginBtn">loginBtn</button>
+    <script src="lazy-singleton.js"></script>
+    <script>
+        var createLoginLayer = function () {
+            var div = document.createElement('div');
+
+            div.innerHTML = '我是登录窗';
+            div.style.display = 'none';
+            div.style.height = '100px';
+            div.style.backgroundColor = 'purple';
+
+            var btn = document.createElement('button');
+            btn.textContent = 'cancel';
+            btn.id = 'cancel';
+            btn.onclick = function () {
+                div.style.display = 'none';
+            };
+
+            div.appendChild(btn);
+            document.body.appendChild(div);
+            return div;
+        };
+
+        var createSingleLoginLayer = getSingle(createLoginLayer);
+
+        document.getElementById('loginBtn').onclick = function () {
+            var loginLayer = createSingleLoginLayer();
+            loginLayer.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

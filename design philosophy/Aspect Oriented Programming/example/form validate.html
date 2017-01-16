@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="username">
+        <input type="text" id="password">
+        <input type="submit" value="submit" id="submit">
+    </form>
+    <script>
+        Function.prototype.before = function (beforefn) {
+            var _self = this;
+            return function () {
+                if(beforefn.apply(this, arguments) === false){
+                    return;
+                }
+                return _self.apply(this, arguments);
+            };
+        };
+
+        var ajax = function (type, url, param) {
+            console.log(param);
+            //发送ajax请求的代码略
+        };
+
+        var $ = function (selector) {
+            return document.querySelector(selector);
+        };
+
+        var username = $('#username');
+        var password = $('#password');
+        var submitBtn= $('#submit');
+
+        var validate = function () {
+            if(username.value === ''){
+                console.log('用户名不能为空');
+                return false;
+            }
+
+            if(password.value === ''){
+                console.log('密码不能为空');
+                return false;
+            }
+
+        };
+
+        var formSubmit = function () {
+            var param = {
+                username: username.value,
+                password: password.value
+            };
+            ajax('http://xxx.com/login',param);
+        };
+
+        formSubmit = formSubmit.before(validate);
+
+        submitBtn.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            formSubmit();
+        };
+    </script>
+</body>
+</html>

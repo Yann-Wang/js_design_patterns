@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <p>使用AOP实现防止重复提交</p>
+    <p>核心思想：重写事件对象的onsubmit属性。</p>
+    <p>但是有局限性，用addEventListener方法注册的事件处理函数无法被重写。</p>
+    <form action="/" method="post">
+        <input type="text" name="username" />
+        <input type="submit" id="submit" />
+    </form>
+    <script src="jquery-1.11.3.js"></script>
+
+    <script>
+
+
+        //$("#submit")[0].addEventListener('click',fn(),false); // 失效
+        $("#submit")[0].onsubmit = fn();
+
+        function fn() {
+            var count = 0;
+            return function (e) {
+                e.preventDefault();
+                //e.stopPropagation();
+
+                console.log(count++);
+            };
+        }
+
+
+    </script>
+    <script src="prevent_repeat_submit.js"></script>
+</body>
+</html>

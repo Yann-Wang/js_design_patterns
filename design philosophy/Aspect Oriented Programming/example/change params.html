@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <script src="../AOP.js"></script>
+    <script>
+        var ajax = function (type, url, param) {
+            console.log(param);
+            //发送ajax请求的代码略
+        };
+
+        var getToken = function () {
+            return 'Token';
+        };
+
+        ajax = ajax.before(function (type, url, param) {
+            param.Token = getToken();
+        });
+
+        ajax('get','http://xxx.com/userinfo',{name:'sven'});
+
+    </script>
+</body>
+</html>
