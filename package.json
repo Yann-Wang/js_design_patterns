@@ -1,0 +1,22 @@
+{
+  "name": "js_design_patterns",
+  "version": "1.0.0",
+  "description": "- 单例模式 - 代理模式 - 观察者模式（发布订阅模式） - 命令模式 - 组合模式 - 模板方法模式 - 职责链模式",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yann-Wang/js_design_patterns.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yann-Wang/js_design_patterns/issues"
+  },
+  "homepage": "https://github.com/Yann-Wang/js_design_patterns#readme",
+  "dependencies": {
+    "expect": "^21.1.0"
+  }
+}

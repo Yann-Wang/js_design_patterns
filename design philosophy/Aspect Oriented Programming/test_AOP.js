@@ -1,6 +1,7 @@
 /**
  * Created by a_wav on 2016/11/28.
  */
+ var aop = require('./AOP');
 var func = function(){
     console.log(2);
 };

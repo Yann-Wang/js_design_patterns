@@ -10,7 +10,7 @@ function Person() {
     };
 }
 
-window.onload = function () {
+(function () {
     var t = new Person;
     var a = new Aspects;
     t = a.before(t, "say", function () {
@@ -18,7 +18,7 @@ window.onload = function () {
     });
     console.log("===========================");
     t.say("司徒正美", "javascript");
-};
+})();
 
 
 

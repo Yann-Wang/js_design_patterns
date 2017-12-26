@@ -1,0 +1,14 @@
+{
+  "name": "dependency-injection",
+  "version": "1.0.0",
+  "description": "- RequireJS / AMD 的方法 - 反射方法：     - 反射是指一个程序在运行时检查和修改一个对象的结构和行为的能力。     - 简单的说，在JavaScript的上下文里，这具体指读取和分析的对象或函数的源代码。 - 综合AMD方法和反射方法",
+  "main": "injector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wyn",
+  "license": "MIT",
+  "dependencies": {
+    "expect.js": "^0.3.1"
+  }
+}

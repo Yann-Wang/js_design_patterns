@@ -3,14 +3,16 @@
  */
 var aop = require('./AOP2');
 
-var a = aop.before(function () {
-    console.log(3);
-},function () {
-    console.log(2);
+var a = function() {
+    console.log('here');
+}
+
+a = aop.before(a,function () {
+    console.log(1);
 });
 
-a = aop.before(a, function () {
-    console.log(1);
+a = aop.after(a, function () {
+    console.log(2);
 });
 
 
