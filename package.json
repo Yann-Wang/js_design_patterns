@@ -4,7 +4,7 @@
   "description": "- 单例模式 - 代理模式 - 观察者模式（发布订阅模式） - 命令模式 - 组合模式 - 模板方法模式 - 职责链模式",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
